@@ -11,7 +11,7 @@ public class TestOpenHelper extends SQLiteOpenHelper {
     boolean flg = false;
 
     public TestOpenHelper(Context context) {
-        super(context, null, null, DB_VERSION);
+        super(context, "Bank.db", null, DB_VERSION);
     }
 
     @Override
@@ -25,14 +25,17 @@ public class TestOpenHelper extends SQLiteOpenHelper {
                         ");"
         );
 
-        //アプリ起動後一回のみテーブルを作成する
+
 
 
         // table row insert
-        /*db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','交遊費', 10000);");
-        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','生活費', 20000);");
-        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','飲食費', 30000);");
-        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','買い物費', 0);");*/
+        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','交遊費', 0);");
+        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','生活費', 0);");
+        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','飲食費', 0);");
+        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','買い物費', 0);");
+        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','その他1', 0);");
+        db.execSQL("insert into amount_used(date,category,price) values ('2018-1101','その他2', 0);");
+
 
     }
 
